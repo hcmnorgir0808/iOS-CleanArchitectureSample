@@ -41,7 +41,7 @@ final class QiitaArticleSearchViewController: UIViewController {
 extension QiitaArticleSearchViewController: QiitaArticleSearchViewInput {
     func setTableView() {
         tableView.reloadData()
-        searchBarTextField.text = nil
+        searchBarTextField.text = "aaa"
     }
 }
 

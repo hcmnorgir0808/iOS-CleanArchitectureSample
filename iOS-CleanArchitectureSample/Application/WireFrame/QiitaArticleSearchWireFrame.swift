@@ -16,10 +16,4 @@ struct QiitaArticleSearchWireFrame: WireFrame {
     init(viewController: ViewController) {
         self.viewController = viewController
     }
-
-//    func showDetail(repositoryModel: GitHubRepositoryModel) {
-//        let nextViewController = GitHubRepositoryDetailViewControllerBuilder.build()
-//        nextViewController.setRepositoryModel(repositoryModel)
-//        self.viewController?.navigationController?.pushViewController(nextViewController, animated: true)
-//    }
 }
