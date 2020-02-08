@@ -1,2 +1,2 @@
 # iOS-CleanArchitectureSample
-swiftで書いたclean-architecureのサンプルアプリです。
+swiftで書いたclean-architectureのサンプルアプリです。
