@@ -14,7 +14,8 @@ protocol QiitaArticleSearchPresenter: class {
 }
 
 protocol QiitaArticleSearchPresenterInput: class {
-    func searchArticle(_ repositoriesModel: String)
+    func searchArticle(_ article: [Article])
+    
 }
 
 final class QiitaArticleSearchPresenterImpl: QiitaArticleSearchPresenter {
@@ -40,7 +41,7 @@ final class QiitaArticleSearchPresenterImpl: QiitaArticleSearchPresenter {
 }
 
 extension QiitaArticleSearchPresenterImpl: QiitaArticleSearchPresenterInput {
-    func searchArticle(_ repositoriesModel: String) {
-        viewController?.setTableView()
+    func searchArticle(_ article: [Article]) {
+        viewController?.setTableView(article)
     }
 }

@@ -21,8 +21,24 @@ final class QiitaArticleSearchDataStoreImpl: QiitaArticleSearchDataStore {
     }
     
     func searchText(text: String) {
-        repository?.searchArticle(text: "aaa")
+        let urlString = "https://qiita.com//api/v2/users/\(text)/items?page=1&per_page=10"
+
+        guard let url = URLComponents(string: urlString) else { return }
+
+        let task = URLSession.shared.dataTask(with: url.url!) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            guard let data = data else { return }
+            
+            let article = try! JSONDecoder().decode([Article].self, from: data)
+            DispatchQueue.main.async {
+                self.repository?.searchArticle(article: article)
+            }
+        }
+        task.resume()
+        
+        
+        
     }
 }
-
-// MARK: - GitHubRepositoryRepositoryInput

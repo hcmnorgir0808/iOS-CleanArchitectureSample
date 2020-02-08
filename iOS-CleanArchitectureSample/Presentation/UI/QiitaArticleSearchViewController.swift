@@ -10,7 +10,7 @@ import UIKit
 
 // APIかなんかでデータをとってきた後にViewに描画をする際のプロトコル
 protocol QiitaArticleSearchViewInput: class {
-    func setTableView()
+    func setTableView(_ article: [Article])
 }
 
 final class QiitaArticleSearchViewController: UIViewController {
@@ -21,9 +21,12 @@ final class QiitaArticleSearchViewController: UIViewController {
     
     fileprivate var presenter: QiitaArticleSearchPresenter?
     
+    private var items = [Article]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
     }
     
     // Presenterの初期化
@@ -39,9 +42,20 @@ final class QiitaArticleSearchViewController: UIViewController {
 
 // Viewを描画する際のprotocolを実装
 extension QiitaArticleSearchViewController: QiitaArticleSearchViewInput {
-    func setTableView() {
+    func setTableView(_ article: [Article]) {
+        items = article
         tableView.reloadData()
-        searchBarTextField.text = "aaa"
     }
 }
 
+extension QiitaArticleSearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = items[indexPath.row].title
+        return cell
+    }
+}

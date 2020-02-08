@@ -13,7 +13,7 @@ protocol QiitaArticleSearchUseCase: class {
 }
 
 protocol QiitaArticleSearchUseCaseInput: class {
-    func searchArticle(text: String?)
+    func searchArticle(article: [Article])
 }
 // useCaseとrepositoryの橋渡し的なprotocol, 中身の実装はrepositoryにやってもらう
 
@@ -34,15 +34,13 @@ final class QiitaArticleSearchUseCaseImpl: QiitaArticleSearchUseCase {
         if let text = searchText, !text.isEmpty {
             repository.searchArticle(searchText: text)
         } else {
-            presenter?.searchArticle("aaa")
+            presenter?.searchArticle([])
         }
     }
 }
 
 extension QiitaArticleSearchUseCaseImpl: QiitaArticleSearchUseCaseInput {
-    func searchArticle(text: String?) {
-        if let text = text {
-            presenter?.searchArticle(text)
-        }
+    func searchArticle(article: [Article]) {
+        presenter?.searchArticle(article)
     }
 }

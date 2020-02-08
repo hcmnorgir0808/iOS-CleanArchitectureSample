@@ -13,7 +13,7 @@ protocol QiitaArticleSearchRepository: class {
 }
 
 protocol QiitaArticleSearchRepositoryInput: class {
-    func searchArticle(text: String)
+    func searchArticle(article: [Article])
 }
 
 final class QiitaArticleSearchRepositoryImpl: QiitaArticleSearchRepository {
@@ -35,7 +35,7 @@ final class QiitaArticleSearchRepositoryImpl: QiitaArticleSearchRepository {
 }
 
 extension QiitaArticleSearchRepositoryImpl: QiitaArticleSearchRepositoryInput {
-    func searchArticle(text: String) {
-        useCase?.searchArticle(text: text)
+    func searchArticle(article: [Article]) {
+        useCase?.searchArticle(article: article)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C628827E23EEFA1B0096521C /* QiitaArticleSearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C628827D23EEFA1B0096521C /* QiitaArticleSearchEntity.swift */; };
 		C6B943B923E582DA00A25A0B /* QiitaArticleSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B943B823E582DA00A25A0B /* QiitaArticleSearchUseCase.swift */; };
 		C6B943BC23E587FB00A25A0B /* QiitaArticleSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B943BB23E587FB00A25A0B /* QiitaArticleSearchRepository.swift */; };
 		C6B943BF23E589D300A25A0B /* QiitaArticleSearchDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B943BE23E589D300A25A0B /* QiitaArticleSearchDataStore.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C628827D23EEFA1B0096521C /* QiitaArticleSearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleSearchEntity.swift; sourceTree = "<group>"; };
 		C6B943B823E582DA00A25A0B /* QiitaArticleSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleSearchUseCase.swift; sourceTree = "<group>"; };
 		C6B943BB23E587FB00A25A0B /* QiitaArticleSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleSearchRepository.swift; sourceTree = "<group>"; };
 		C6B943BE23E589D300A25A0B /* QiitaArticleSearchDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleSearchDataStore.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C628827C23EEF9FF0096521C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C628827D23EEFA1B0096521C /* QiitaArticleSearchEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		C6B943B723E582AC00A25A0B /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C6B943B723E582AC00A25A0B /* UseCase */,
+				C6B943BA23E587D900A25A0B /* Repository */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -174,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				C6B943BD23E589A200A25A0B /* DataStore */,
-				C6B943BA23E587D900A25A0B /* Repository */,
+				C628827C23EEF9FF0096521C /* Entity */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C628827E23EEFA1B0096521C /* QiitaArticleSearchEntity.swift in Sources */,
 				C6E842DD23E56BE000C3EE75 /* QiitaArticleSearchViewController.swift in Sources */,
 				C6E842D923E56BE000C3EE75 /* AppDelegate.swift in Sources */,
 				C6E842F223E578CF00C3EE75 /* QiitaArticleSearchPresenter.swift in Sources */,
