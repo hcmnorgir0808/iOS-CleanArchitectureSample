@@ -3,4 +3,4 @@ swiftで書いたclean-architectureのサンプルアプリです。
 
 QiitaのユーザIDで検索すると、そのユーザが投稿した記事のタイトルを表示します。(最大上位10件)
 
-<img src="https://user-images.githubusercontent.com/48383852/74097167-3f4f9800-4b4c-11ea-94b4-cd35b7d7ce7c.png" width="150px">
+![画面収録-2020-04-20-0 10 58](https://user-images.githubusercontent.com/48383852/79691699-0c3c2a00-829c-11ea-99c9-d6d57d785a7d.gif)
